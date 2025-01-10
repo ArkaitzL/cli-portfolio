@@ -6,6 +6,7 @@ import Help from '../components/Help.astro';
 import Perfil from '../components/Perfil.astro';
 import SobreMi from '../components/SobreMi.astro';
 import BaboonGames from '../components/BaboonGames.astro';
+import TuNuevaWeb from '../components/TuNuevaWeb.astro';
 ---
 
 <Layout title="Mini Portfolio">
@@ -17,14 +18,18 @@ import BaboonGames from '../components/BaboonGames.astro';
     <div id="help" class="hidden">
       <Help />
     </div>
-    <div id="perfil" class="hidden"> <!--  Quitar hidden -->
+    <div id="perfil" class=""> <!--  Quitar hidden -->
       <Perfil />
     </div>
     <div id="sobremi" class="hidden">
       <SobreMi />
     </div>
-    <div id="baboongames" class=""> <!--  Poner hidden -->
+    <div id="baboongames" class="hidden">
       <BaboonGames />
+    </div>
+
+    <div id="tunuevaweb" class="hidden"> <!--  Poner hidden -->
+      <TuNuevaWeb />
     </div>
   </div>
   

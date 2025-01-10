@@ -12,34 +12,63 @@ const { title } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+    <title>Consola</title>
   </head>
   <body class="bg-[url('/Fondo.jpg')] bg-cover bg-center text-text-primary min-h-screen flex flex-col items-center justify-center font-mono">
-    <div
-      id="console-container"
-      class="h-[600px] w-11/12 lg:w-4/5 p-6 bg-background-interior border border-borde rounded-md shadow-md relative bg-background-interiror"
-    >
-      <!-- Barra de control con botones de ventana -->
-      <div class="window-controls absolute top-0 right-0 flex space-x-2 p-2 bg-background-exterior rounded-t-md w-full">
+    <!-- Contenedor principal de la consola -->
+    <div class="h-[640px] w-11/12 lg:w-4/5">
+      <!-- Barra de control -->
+      <div class="window-controls flex space-x-2 p-2 bg-background-exterior rounded-t-md">
         <!-- Botón de minimizar -->
         <button class="minimize-btn bg-yellow-500 rounded-full w-4 h-4 hover:bg-yellow-400"></button>
         <!-- Botón de maximizar -->
         <button class="maximize-btn bg-green-500 rounded-full w-4 h-4 hover:bg-green-400"></button>
-        <!-- Botón de cerrar (X) -->
+        <!-- Botón de cerrar -->
         <button class="close-btn bg-red-500 rounded-full w-4 h-4 hover:bg-red-400"></button>
       </div>
-
-      <!-- Fondo interior de la consola -->
-      <div class="h-full w-full rounded-md p-4">
-        <slot />
+      <!-- Contenido de la consola -->
+      <div
+        id="console-container"
+        class="h-[600px] w-full bg-background-interiror border border-borde rounded-b-md rounded-t-none relative shadow-[4px_8px_25px_rgba(0,0,0,0.6)]"
+      >
+        <!-- Fondo interior de la consola -->
+        <div class="h-full w-full rounded-md p-10 overflow-y-auto">
+          <slot />
+        </div>
       </div>
-
     </div>
   </body>
 </html>
 
 
+
+<style>
+
+  /* Para navegadores basados en WebKit (Chrome, Edge, Safari) */
+  ::-webkit-scrollbar {
+    width: 12px; /* Ancho de la barra de desplazamiento */
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f4f4f4; /* Color de fondo del track */
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #888; /* Color del pulgar (thumb) */
+    border-radius: 6px; /* Bordes redondeados */
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Color del pulgar al pasar el ratón */
+  }
+
+  /* Firefox */
+  * {
+    scrollbar-width: thin; /* Grosor: thin, auto, none */
+    scrollbar-color: #888 #f4f4f4; /* Pulgar y fondo */
+  }
+
+</style>
 
 
 <style is:global>

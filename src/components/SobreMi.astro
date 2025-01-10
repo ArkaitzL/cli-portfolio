@@ -1,0 +1,99 @@
+---
+export interface Props {}
+---
+
+
+<!-- Sobre mí -->
+<!-- Título -->
+<p class="text-text-destacado text-2xl font-semibold pl-8 sm:pl-4 md:pl-8">Sobre mí</p>
+<p class="text-text-destacado2 text-md font-medium pl-8 sm:pl-4 md:pl-8">Formación y habilidades</p>
+
+<!-- Estudios -->
+<div class="mt-6 text-text-secondary text-md font-light px-12 sm:px-4 md:px-12">
+  <p class="text-sm sm:text-base md:text-md font-semibold text-text-destacado2">Estudios</p>
+  <ul class="list-disc list-inside space-y-2 mt-4">
+    <li>
+      <span class="font-medium">Técnico superior en Desarrollo de Aplicaciones Multiplataforma</span> - FP Txurdinaga 
+      <br />
+      <span class="text-sm sm:text-base text-text-secondary pl-5">📅 Septiembre 2023 - Junio 2024</span>
+    </li>
+    <li>
+      <span class="font-medium">Técnico superior en Desarrollo de Aplicaciones Web</span> - FP Txurdinaga 
+      <br />
+      <span class="text-sm sm:text-base text-text-secondary pl-5">📅 Septiembre 2021 - Junio 2023</span>
+    </li>
+    <li>
+      <span class="font-medium">Técnico en Sistemas Microinformáticos y Redes</span> - FP Txurdinaga 
+      <br />
+      <span class="text-sm sm:text-base text-text-secondary pl-5">📅 Septiembre 2019 - Julio 2021</span>
+    </li>
+  </ul>
+</div>
+
+<!-- Habilidades -->
+<div class="mt-6 text-text-secondary text-md font-light px-12 sm:px-4 md:px-12">
+  <p class="text-sm sm:text-base md:text-md font-semibold text-text-destacado2">Habilidades</p>
+
+  <!-- Lista de habilidades -->
+  <div id="skills-list" class="overflow-hidden max-h-12 transition-[max-height] duration-300">
+    <ul class="list-none grid grid-cols-5 gap-4 mt-4 pl-5">
+      <li class="text-sm sm:text-base text-text-secondary">🚀 HTML</li>
+      <li class="text-sm sm:text-base text-text-secondary">🚀 CSS</li>
+      <li class="text-sm sm:text-base text-text-secondary">🚀 JavaScript</li>
+      <li class="text-sm sm:text-base text-text-secondary">🚀 PHP</li>
+      <li class="text-sm sm:text-base text-text-secondary">🚀 Java</li>
+      <li class="text-sm sm:text-base text-text-secondary">🚀 C#</li>
+      <li class="text-sm sm:text-base text-text-secondary">🛠️ Unity</li>
+      <li class="text-sm sm:text-base text-text-secondary">🛠️ Node.js</li>
+      <li class="text-sm sm:text-base text-text-secondary">🛠️ Vue</li>
+      <li class="text-sm sm:text-base text-text-secondary">🛠️ Astro</li>
+      <li class="text-sm sm:text-base text-text-secondary">🛠️ Bootstrap</li>
+      <li class="text-sm sm:text-base text-text-secondary">🛠️ Tailwind</li>
+      <li class="text-sm sm:text-base text-text-secondary">🛠️ Laravel</li>
+      <li class="text-sm sm:text-base text-text-secondary">📦 SQL</li>
+      <li class="text-sm sm:text-base text-text-secondary">📦 Git</li>
+      <li class="text-sm sm:text-base text-text-secondary">📦 GitHub</li>
+      <li class="text-sm sm:text-base text-text-secondary">📦 Fork</li>
+      <li class="text-sm sm:text-base text-text-secondary">📦 JUnit5</li>
+      <li class="text-sm sm:text-base text-text-secondary">📦 Blender</li>
+      
+    </ul>
+  </div>
+  
+  
+  
+
+  <!-- Botón para mostrar más -->
+  <button
+    id="toggle-button"
+    class="mt-4 px-4 py-2 bg-background-interior text-text-primary font-mono border border-borde rounded-md hover:bg-background-exterior transition-colors"
+  >
+    Ver más
+  </button>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const skillsList = document.getElementById('skills-list');
+    const button = document.getElementById('toggle-button');
+
+    button.addEventListener('click', () => {
+      if (skillsList.classList.contains('max-h-12')) {
+        skillsList.classList.remove('max-h-12');
+        skillsList.classList.add('max-h-full');
+        button.textContent = 'Ver menos';
+      } else {
+        // Eliminamos la transición temporalmente para hacerlo instantáneo
+        skillsList.classList.remove('transition-[max-height]', 'duration-300');
+        skillsList.classList.remove('max-h-full');
+        skillsList.classList.add('max-h-12');
+        button.textContent = 'Ver más';
+
+        // Rehabilitamos la transición para futuras acciones
+        setTimeout(() => {
+          skillsList.classList.add('transition-[max-height]', 'duration-300');
+        }, 0);
+      }
+    });
+  });
+</script>

@@ -8,7 +8,7 @@ export default {
 			interiror: '#1c1917',
 			exterior: '#404040',
 		  },
-		  borde: '#e7e5e4',
+		  borde: '#888888',
 		  text: {
 			primary: '#e7e5e4',
 			secondary: '#d6d3d1',

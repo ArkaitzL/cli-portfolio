@@ -1,0 +1,17 @@
+---
+const { titulo, plataforma, github, tiendaLink } = Astro.props;
+---
+
+<div class="bg-background-interior p-4 border-b border-gray-300">
+    <p class="font-semibold text-lg text-text-destacado">{titulo}</p>
+    <p class="text-sm text-text-secondary">Plataforma: {plataforma}</p>
+    <div class="mt-2 flex justify-end">
+        <a href={tiendaLink} target="_blank" class="text-text-enlace flex items-center">
+            [🎮 {plataforma}]
+        </a>
+        <a href={github} class="text-text-enlace flex items-center mr-4">
+          [🛠️ GitHub]
+        </a>
+    </div>
+  </div>
+  

@@ -4,22 +4,30 @@ import Layout from '../layouts/Layout.astro';
 import Error from '../components/Error.astro';
 import Help from '../components/Help.astro';
 import Perfil from '../components/Perfil.astro';
+import SobreMi from '../components/SobreMi.astro';
+import BaboonGames from '../components/BaboonGames.astro';
 ---
 
-<Layout title="CMD Folio">
+<Layout title="Mini Portfolio">
 
-  <div class="p-4">
+  <div class="py-4">
     <div id="error" class="hidden">
       <Error />
     </div>
     <div id="help" class="hidden">
       <Help />
     </div>
-    <div id="perfil" class="">
+    <div id="perfil" class="hidden"> <!--  Quitar hidden -->
       <Perfil />
     </div>
+    <div id="sobremi" class="hidden">
+      <SobreMi />
+    </div>
+    <div id="baboongames" class=""> <!--  Poner hidden -->
+      <BaboonGames />
+    </div>
   </div>
-
+  
   <div class="flex items-center mt-2">
     <span class="text-text-destacado mr-2">C:\></span>
     <input

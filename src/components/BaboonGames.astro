@@ -1,0 +1,48 @@
+---
+// baboon-games.astro
+
+import GameCard from '../components/subcomponents/Juego.astro';
+---
+
+<div class="pl-8 sm:pl-4 md:pl-8">
+  <!-- Título de la sección -->
+  <p class="text-text-destacado text-2xl font-semibold">Baboon Games</p>
+
+  <!-- Descripción breve -->
+  <div class="mt-6 text-text-secondary text-md font-light">
+    <p>
+      Baboon Games es un estudio independiente dedicado a la creación de juegos interactivos y emocionantes. A través de nuestras aventuras digitales, buscamos ofrecer experiencias únicas a los jugadores de todo el mundo. A continuación, encontrarás algunos de nuestros proyectos más recientes.
+    </p>
+  </div>
+
+  <!-- Subtítulo para la sección de juegos -->
+  <p class="text-sm sm:text-base md:text-md font-semibold text-text-destacado2 mt-8 pl-4">Nuestros Juegos</p>
+
+  <!-- Proyectos -->
+  <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-6">
+    <GameCard
+      titulo="Swift Slide"
+      plataforma="Play Store"
+      github="https://github.com/ArkaitzL/OnlyBounce"
+      tiendaLink="https://play.google.com/" 
+    />
+    <GameCard
+      titulo="Only Bounce"
+      plataforma="Play Store"
+      github="https://github.com/ArkaitzL/Swiftslide"
+      tiendaLink="https://play.google.com/"
+    />
+    <GameCard
+      titulo="Temple of Clouds"
+      plataforma="Itch.io"
+      github="https://github.com/ArkaitzL/Temple-of-Clouds"
+      tiendaLink="https://baboon-games-studios.itch.io/temple-of-clouds"
+    />
+    <GameCard
+      titulo="Keytwist"
+      plataforma="Itch.io"
+      github="https://github.com/ArkaitzL/Keytwist-DEMO"
+      tiendaLink="https://baboongamesoficial.itch.io/keytwist"
+    />
+  </div>
+</div>

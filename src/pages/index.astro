@@ -1,31 +1,42 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+import Error from '../components/Error.astro';
 import Help from '../components/Help.astro';
 import Perfil from '../components/Perfil.astro';
-import Error from '../components/Error.astro';
 ---
 
 <Layout title="CMD Folio">
-  <div id="perfil" class="hidden">
-    <Perfil />
-  </div>
-  <div id="help" class="hidden">
-    <Help />
-  </div>
-  <div id="error" class="hidden">
-    <Error />
+
+  <div class="p-4">
+    <div id="error" class="hidden">
+      <Error />
+    </div>
+    <div id="help" class="hidden">
+      <Help />
+    </div>
+    <div id="perfil" class="hidden">
+      <Perfil />
+    </div>
   </div>
 
   <div class="flex items-center mt-2">
     <span class="text-accent-primary mr-2">C:\></span>
     <input
-      id="console-input"
+      id="input-consola"
       type="text"
       class="w-full bg-transparent outline-none text-text-primary font-mono"
-      placeholder="Escribe un comando..."
+      placeholder=""
       autofocus
+      autocomplete="off"
     />
   </div>
 </Layout>
 
-<script type="module" src="../scripts/console.js"></script>
+<script type="module" src="/src/scripts/consola.js"></script>
+
+<style>
+  #input-consola {
+    caret-color: theme('colors.accent.primary');
+  }
+</style>

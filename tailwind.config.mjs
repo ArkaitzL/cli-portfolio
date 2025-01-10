@@ -4,10 +4,14 @@ export default {
 	theme: {
 	  extend: {
 		colors: {
-		  background: '#1c1917',
+		  background: {
+			interiror: '#1c1917',
+			exterior: '#0d0d0d',
+		  },
 		  text: {
 			primary: '#e7e5e4',
 			secondary: '#d6d3d1',
+			destacado: '#fb923c',
 		  },
 		  accent: {
 			primary: '#fb923c',
@@ -17,5 +21,4 @@ export default {
 	  },
 	},
 	plugins: [],
-  };
-  
+};

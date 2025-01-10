@@ -15,14 +15,12 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="bg-background text-text-primary min-h-screen flex flex-col items-center justify-center">
+  <body class="bg-background-exterior text-text-primary min-h-screen flex flex-col items-center justify-center font-mono">
     <div
       id="console-container"
-      class="w-11/12 lg:w-4/5 p-6 bg-background border border-accent-primary rounded-lg shadow-md"
+      class="h-[600px] w-11/12 lg:w-4/5 p-6 bg-background-interiror border border-accent-primary rounded-lg shadow-md"
     >
-      <div id="output" class="h-[600px] overflow-y-auto font-mono text-text-secondary">
-        <slot />
-      </div>
+      <slot />
     </div>
   </body>
 </html>

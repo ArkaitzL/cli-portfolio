@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
   componentes.forEach((componente) => {
     const item = document.createElement("li");
     item.innerHTML = `
-      <span class="text-text-destacado pl-4"> > ${componente.name}</span>
+      <span class="text-text-destacado2 pl-4"> > ${componente.name}</span>
     `;
     lista.appendChild(item);
   });

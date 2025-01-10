@@ -6,16 +6,15 @@ export default {
 		colors: {
 		  background: {
 			interiror: '#1c1917',
-			exterior: '#0d0d0d',
+			exterior: '#404040',
 		  },
+		  borde: '#e7e5e4',
 		  text: {
 			primary: '#e7e5e4',
 			secondary: '#d6d3d1',
-			destacado: '#fb923c',
-		  },
-		  accent: {
-			primary: '#fb923c',
-			secondary: '#fdba74',
+			destacado: '#fb923c', // Color para textos destacados
+			destacado2: '#fdba74', // Segundo color destacado
+			enlace: '#6ee7b7', // Nuevo color para los enlaces
 		  },
 		},
 	  },

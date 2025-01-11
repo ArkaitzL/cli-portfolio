@@ -1,5 +1,29 @@
 ---
-export interface Props {}
+import LibraryCard from '../components/subcomponents/Libreria.astro';
 ---
 
-[WIP]: # "This is a work in progress"
+<div class="pl-8 sm:pl-4 md:pl-8">
+  <!-- Título de la sección -->
+  <p class="text-text-destacado text-2xl font-semibold">Librerías</p>
+
+  <!-- Descripción breve -->
+  <div class="mt-6 text-md font-light text-texto-secondary">
+    <p>
+      A lo largo de mi trayectoria, he desarrollado librerías tanto para Unity como para aplicaciones web con el propósito de aportar herramientas útiles y facilitar el trabajo de otros desarrolladores. Estas librerías buscan resolver problemas comunes y mejorar la productividad. A continuación, te presento algunas de ellas:
+    </p>
+  </div>
+
+  <!-- Subtítulo para la sección de librerías -->
+  <p class="text-sm sm:text-base md:text-md font-semibold text-text-destacado2 mt-8 pl-4">Mis Librerías</p>
+
+  <!-- Proyectos -->
+  <div class="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-6">
+    <LibraryCard
+      titulo="Input Manager Pro"
+      resumen="Un sistema avanzado de manejo de inputs para Unity que soporta dispositivos múltiples."
+      plataforma="Unity"
+      github="https://github.com/tu-repo/InputManagerPro"
+      docLink="https://tu-web.com/InputManagerPro"
+    />
+  </div>
+</div>

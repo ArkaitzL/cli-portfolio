@@ -1,10 +1,11 @@
-import { componentes, error, help } from "./data.js";
+import { componentes, errorId, inicioId, help } from "./data.js";
 
 document.addEventListener("DOMContentLoaded", () => {
 
   // Elementos de la consola
   const input = document.getElementById("input-consola");
-  const error_elemento = document.getElementById(error);
+  const error_elemento = document.getElementById(errorId);
+  const inicio_elemento = document.getElementById(inicioId);
   let componente = null;
 
   // Comandos disponibles, incluyendo help y error
@@ -37,6 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (elemento) elemento.classList.add("hidden");
     });
     if (error_elemento) error_elemento.classList.add("hidden");
+    if (inicio_elemento) inicio_elemento.classList.add("hidden");
 
     // Busca el componente solicitado en la lista de componentes
     componente = comandos_disponibles.find((c) => name.toLowerCase().trim() === c.name.toLowerCase().trim());

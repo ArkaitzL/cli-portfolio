@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
+import Inicio from '../components/Inicio.astro';
 import Error from '../components/Error.astro';
 import Help from '../components/Help.astro';
 import Perfil from '../components/Perfil.astro';
@@ -10,16 +11,19 @@ import TuNuevaWeb from '../components/TuNuevaWeb.astro';
 import Librerias from '../components/Librerias.astro';
 ---
 
-<Layout title="Mini Portfolio">
+<Layout title="CLI Portfolio">
 
   <div class="py-4">
+    <div id="inicio" class="">
+      <Inicio />
+    </div>
     <div id="error" class="hidden">
       <Error />
     </div>
     <div id="help" class="hidden">
       <Help />
     </div>
-    <div id="perfil" class=""> <!--  Quitar hidden -->
+    <div id="perfil" class="hidden"> <!--  Quitar hidden -->
       <Perfil />
     </div>
     <div id="sobremi" class="hidden">
@@ -53,6 +57,7 @@ import Librerias from '../components/Librerias.astro';
 </Layout>
 
 <script type="module" src="/scripts/consola.js"></script>
+<script type="module" src="/scripts/error.js"></script>
 
 <style>
   #input-consola {

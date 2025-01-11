@@ -5,5 +5,6 @@
         { id: "tunuevaweb", name: "TuNuevaWeb" },
         { id: "librerias", name: "Librerias" },
     ];
-    export const error = "error";
+    export const errorId = "error";
+    export const inicioId = "inicio";
     export const help = { id: "help", name: "Help" };

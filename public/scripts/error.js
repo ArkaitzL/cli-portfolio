@@ -1,3 +1,3 @@
 import { help } from "./data.js";
 
-document.getElementById('help_txt').innerHTML = help.name;
+document.getElementById('help_txt').innerHTML = "> " + help.name;

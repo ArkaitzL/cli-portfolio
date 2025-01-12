@@ -6,18 +6,17 @@ export interface Props {
 
 const { title } = Astro.props;
 ---
-
 <!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.png" />
-    <title>{ title }</title>
+    <title>{title}</title>
   </head>
-  <body class="bg-[url('/Fondo.jpg')] bg-cover bg-center text-text-primary min-h-screen flex flex-col items-center justify-center font-mono">
+  <body class="bg-[url('/Fondo.jpg')] bg-cover bg-center text-text-primary min-h-screen flex items-center justify-center font-mono">
     <!-- Contenedor principal de la consola -->
-    <div class="h-[640px] w-11/12 lg:w-4/5">
+    <div class="console-container h-[640px] w-11/12 lg:w-4/5 max-w-full mx-auto">
       <!-- Barra de control -->
       <div class="window-controls flex space-x-2 p-2 bg-background-exterior rounded-t-md">
         <button class="minimize-btn bg-yellow-500 rounded-full w-4 h-4 hover:bg-yellow-400"></button>
@@ -27,9 +26,9 @@ const { title } = Astro.props;
       <!-- Contenido de la consola -->
       <div
         id="console-container"
-        class="h-[600px] w-full bg-background-interiror border border-borde rounded-b-md rounded-t-none relative shadow-[4px_8px_25px_rgba(0,0,0,0.6)]"
+        class="content h-full w-full bg-background-interiror border border-borde rounded-b-md rounded-t-none relative shadow-[4px_8px_25px_rgba(0,0,0,0.6)]"
       >
-        <div class="h-full w-full rounded-md p-10 overflow-y-auto">
+        <div class="h-full w-full rounded-md p-4 overflow-y-auto">
           <slot />
         </div>
       </div>
@@ -41,56 +40,81 @@ const { title } = Astro.props;
         <img
           src="/iconos/mac.png"
           alt="Mac"
-          class="w-12 h-12 transform group-hover:scale-110 transition duration-300"
+          class="icon-image"
         />
       </div>
       <div class="icon group">
         <img
           src="/iconos/safari.png"
           alt="Safari"
-          class="w-12 h-12 transform group-hover:scale-110 transition duration-300"
+          class="icon-image"
         />
       </div>
       <div class="icon group">
         <img
           src="/iconos/ajustes.png"
           alt="Ajustes"
-          class="w-12 h-12 transform group-hover:scale-110 transition duration-300"
+          class="icon-image"
         />
       </div>
       <div class="icon group">
         <img
           src="/iconos/calendario.png"
           alt="Calendario"
-          class="w-12 h-12 transform group-hover:scale-110 transition duration-300"
+          class="icon-image"
         />
       </div>
       <div class="icon group">
         <img
           src="/iconos/mail.png"
           alt="Mail"
-          class="w-12 h-12 transform group-hover:scale-110 transition duration-300"
+          class="icon-image"
         />
       </div>
     </div>
   </body>
 </html>
 
-
 <style>
+  /* Consola: en pantallas grandes (PC), se mantiene como estaba */
+  .console-container {
+    height: 640px; /* Se mantiene igual en pantallas grandes */
+    margin: 0 auto;
+  }
+
+  /* Ajustes solo en móviles */
+  @media (max-width: 768px) {
+    .console-container {
+      height: 90vh; /* En móviles, ocupa el 90% de la altura de la pantalla */
+    }
+
+    .mac-bar {
+      display: none; /* Oculta la barra de aplicaciones en móvil */
+    }
+
+    body {
+      padding: 8px; /* Deja un pequeño margen para el fondo */
+    }
+  }
+
+  /* Íconos siempre cuadrados */
+  .icon-image {
+    width: 48px;
+    height: 48px;
+    object-fit: cover; /* Asegura que siempre son cuadrados */
+    border-radius: 12px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .icon-image:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.4);
+  }
+
   /* Barra de Mac */
   .mac-bar {
     bottom: 16px; /* Distancia desde el borde inferior */
     width: auto; /* Ajusta automáticamente al contenido */
-  }
-
-  /* Estilo de los íconos */
-  .mac-icons img {
-    border-radius: 12px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-  }
-
-  .mac-icons img:hover {
-    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.4);
   }
 </style>

@@ -7,6 +7,7 @@ export default {
 		  background: {
 			interiror: '#1c1917',
 			exterior: '#404040',
+			barra: '#d6d3d1',
 		  },
 		  borde: '#888888',
 		  text: {

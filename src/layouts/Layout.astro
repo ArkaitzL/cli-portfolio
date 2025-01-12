@@ -1,4 +1,5 @@
 ---
+// Mantén la parte de Astro igual que antes
 export interface Props {
   title: string;
 }
@@ -19,11 +20,8 @@ const { title } = Astro.props;
     <div class="h-[640px] w-11/12 lg:w-4/5">
       <!-- Barra de control -->
       <div class="window-controls flex space-x-2 p-2 bg-background-exterior rounded-t-md">
-        <!-- Botón de minimizar -->
         <button class="minimize-btn bg-yellow-500 rounded-full w-4 h-4 hover:bg-yellow-400"></button>
-        <!-- Botón de maximizar -->
         <button class="maximize-btn bg-green-500 rounded-full w-4 h-4 hover:bg-green-400"></button>
-        <!-- Botón de cerrar -->
         <button class="close-btn bg-red-500 rounded-full w-4 h-4 hover:bg-red-400"></button>
       </div>
       <!-- Contenido de la consola -->
@@ -31,52 +29,68 @@ const { title } = Astro.props;
         id="console-container"
         class="h-[600px] w-full bg-background-interiror border border-borde rounded-b-md rounded-t-none relative shadow-[4px_8px_25px_rgba(0,0,0,0.6)]"
       >
-        <!-- Fondo interior de la consola -->
         <div class="h-full w-full rounded-md p-10 overflow-y-auto">
           <slot />
         </div>
+      </div>
+    </div>
+
+    <!-- Barra de aplicaciones estilo Mac -->
+    <div class="mac-bar fixed bottom-4 left-1/2 transform -translate-x-1/2 flex items-center bg-background-barra backdrop-blur-lg rounded-xl shadow-lg p-2 space-x-6">
+      <div class="icon group">
+        <img
+          src="/iconos/mac.png"
+          alt="Mac"
+          class="w-12 h-12 transform group-hover:scale-110 transition duration-300"
+        />
+      </div>
+      <div class="icon group">
+        <img
+          src="/iconos/safari.png"
+          alt="Safari"
+          class="w-12 h-12 transform group-hover:scale-110 transition duration-300"
+        />
+      </div>
+      <div class="icon group">
+        <img
+          src="/iconos/ajustes.png"
+          alt="Ajustes"
+          class="w-12 h-12 transform group-hover:scale-110 transition duration-300"
+        />
+      </div>
+      <div class="icon group">
+        <img
+          src="/iconos/calendario.png"
+          alt="Calendario"
+          class="w-12 h-12 transform group-hover:scale-110 transition duration-300"
+        />
+      </div>
+      <div class="icon group">
+        <img
+          src="/iconos/mail.png"
+          alt="Mail"
+          class="w-12 h-12 transform group-hover:scale-110 transition duration-300"
+        />
       </div>
     </div>
   </body>
 </html>
 
 
-
 <style>
-
-  /* Para navegadores basados en WebKit (Chrome, Edge, Safari) */
-  ::-webkit-scrollbar {
-    width: 12px; /* Ancho de la barra de desplazamiento */
+  /* Barra de Mac */
+  .mac-bar {
+    bottom: 16px; /* Distancia desde el borde inferior */
+    width: auto; /* Ajusta automáticamente al contenido */
   }
 
-  ::-webkit-scrollbar-track {
-    background: #f4f4f4; /* Color de fondo del track */
+  /* Estilo de los íconos */
+  .mac-icons img {
+    border-radius: 12px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
   }
 
-  ::-webkit-scrollbar-thumb {
-    background: #888; /* Color del pulgar (thumb) */
-    border-radius: 6px; /* Bordes redondeados */
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: #555; /* Color del pulgar al pasar el ratón */
-  }
-
-  /* Firefox */
-  * {
-    scrollbar-width: thin; /* Grosor: thin, auto, none */
-    scrollbar-color: #888 #f4f4f4; /* Pulgar y fondo */
-  }
-
-</style>
-
-
-<style is:global>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
-  html {
-    font-family: 'Inter', system-ui, sans-serif;
-  }
-  code {
-    font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
+  .mac-icons img:hover {
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.4);
   }
 </style>

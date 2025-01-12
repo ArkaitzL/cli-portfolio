@@ -5,5 +5,5 @@ let helpElements = document.getElementsByClassName('help_txt');
 
 // Asignar el valor a cada uno de los elementos con la clase 'help_txt'
 for (let i = 0; i < helpElements.length; i++) {
-    helpElements[i].innerHTML = "> " + help.name;
+    helpElements[i].innerHTML = help.name;
 }

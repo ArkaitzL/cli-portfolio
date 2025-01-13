@@ -2,7 +2,7 @@ import { componentes } from "./data.js";
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  const elemento = document.getElementById("help");
+  const elemento = document.getElementById("help-list");
 
   if (!elemento) {
     console.error("Contenedor de ayuda no encontrado");
